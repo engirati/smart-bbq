@@ -8223,7 +8223,7 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <part name="P+6" library="supply1" deviceset="+12V" device=""/>
 <part name="J5" library="engirati" deviceset="PJ_002AH_SMT" device="" value="5.5od/2.1id"/>
 <part name="J6" library="engirati" deviceset="PJ_002AH_SMT" device="" value="5.5od/2.5id"/>
-<part name="R15" library="rcl" deviceset="R-US_" device="R0805" value="330"/>
+<part name="R15" library="rcl" deviceset="R-US_" device="R0805" value="1K"/>
 <part name="J8" library="con-molex" deviceset="22-?-02" device="05-7028" value=""/>
 <part name="Q1" library="engirati" deviceset="SSM6N58NU" device=""/>
 <part name="GND12" library="SparkFun" deviceset="GND" device=""/>
@@ -8232,7 +8232,7 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <part name="P+1" library="supply1" deviceset="+12V" device=""/>
 <part name="J7" library="engirati" deviceset="PJ_002AH_SMT" device="" value="5.5od/2.5id"/>
 <part name="J9" library="con-molex" deviceset="22-?-02" device="05-7028" value=""/>
-<part name="R17" library="rcl" deviceset="R-US_" device="R0805" value="330"/>
+<part name="R17" library="rcl" deviceset="R-US_" device="R0805" value="1K"/>
 <part name="R18" library="rcl" deviceset="R-US_" device="R0805" value="330"/>
 <part name="GND10" library="SparkFun" deviceset="GND" device=""/>
 <part name="R19" library="rcl" deviceset="R-US_" device="R0805" value="1K"/>
@@ -8247,6 +8247,9 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <part name="R26" library="rcl" deviceset="R-US_" device="R0805" value="10K"/>
 <part name="D4" library="engirati" deviceset="FAIRCHILD_S1A_SMT" device="" value=""/>
 <part name="F1" library="SparkFun-PowerIC" deviceset="PTC" device="SMD"/>
+<part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
+<part name="R14" library="rcl" deviceset="R-US_" device="R0805" value="10K"/>
+<part name="R16" library="rcl" deviceset="R-US_" device="R0805" value="1K"/>
 </parts>
 <sheets>
 <sheet>
@@ -8274,11 +8277,11 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <instance part="LED_USR1" gate="G$1" x="200.66" y="165.1" rot="R90"/>
 <instance part="LED_USR2" gate="G$1" x="195.58" y="160.02" rot="R90"/>
 <instance part="LED_USR3" gate="G$1" x="190.5" y="154.94" rot="R90"/>
-<instance part="S1" gate="S" x="111.76" y="121.92"/>
+<instance part="S1" gate="S" x="101.6" y="109.22"/>
 <instance part="S2" gate="S" x="218.44" y="134.62"/>
 <instance part="S3" gate="S" x="218.44" y="111.76"/>
 <instance part="GND1" gate="1" x="223.52" y="104.14"/>
-<instance part="GND2" gate="1" x="106.68" y="114.3"/>
+<instance part="GND2" gate="1" x="96.52" y="101.6"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
 <instance part="FRAME1" gate="G$2" x="172.72" y="0"/>
 <instance part="GND4" gate="1" x="111.76" y="190.5" rot="R180"/>
@@ -8348,6 +8351,9 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <instance part="R26" gate="G$1" x="210.82" y="119.38" rot="R90"/>
 <instance part="D4" gate="G$1" x="187.96" y="68.58"/>
 <instance part="F1" gate="G$1" x="195.58" y="68.58"/>
+<instance part="+3V5" gate="G$1" x="109.22" y="127"/>
+<instance part="R14" gate="G$1" x="109.22" y="116.84" rot="R90"/>
+<instance part="R16" gate="G$1" x="116.84" y="116.84" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -8404,10 +8410,10 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <segment>
 <pinref part="GND2" gate="1" pin="GND"/>
 <pinref part="S1" gate="S" pin="2"/>
-<wire x1="106.68" y1="116.84" x2="106.68" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="104.14" x2="96.52" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="S1" gate="S" pin="1"/>
-<wire x1="106.68" y1="119.38" x2="106.68" y2="121.92" width="0.1524" layer="91"/>
-<junction x="106.68" y="119.38"/>
+<wire x1="96.52" y1="106.68" x2="96.52" y2="109.22" width="0.1524" layer="91"/>
+<junction x="96.52" y="106.68"/>
 </segment>
 <segment>
 <pinref part="SPARK" gate="G$1" pin="GND@2"/>
@@ -8663,13 +8669,10 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 </net>
 <net name="N$16" class="0">
 <segment>
-<pinref part="S1" gate="S" pin="4"/>
-<pinref part="S1" gate="S" pin="3"/>
-<wire x1="116.84" y1="119.38" x2="116.84" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="SPARK" gate="G$1" pin="A2"/>
 <wire x1="132.08" y1="144.78" x2="116.84" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="R16" gate="G$1" pin="2"/>
 <wire x1="116.84" y1="121.92" x2="116.84" y2="144.78" width="0.1524" layer="91"/>
-<junction x="116.84" y="121.92"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -8941,6 +8944,11 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <pinref part="R26" gate="G$1" pin="2"/>
 <wire x1="210.82" y1="127" x2="210.82" y2="124.46" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="+3V5" gate="G$1" pin="+3V3"/>
+<pinref part="R14" gate="G$1" pin="2"/>
+<wire x1="109.22" y1="124.46" x2="109.22" y2="121.92" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="+12V" class="0">
 <segment>
@@ -9094,15 +9102,15 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <net name="N$40" class="0">
 <segment>
 <pinref part="S2" gate="S" pin="1"/>
-<pinref part="S2" gate="S" pin="2"/>
-<wire x1="213.36" y1="132.08" x2="213.36" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="R23" gate="G$1" pin="2"/>
 <wire x1="208.28" y1="134.62" x2="210.82" y2="134.62" width="0.1524" layer="91"/>
-<junction x="213.36" y="134.62"/>
 <pinref part="R25" gate="G$1" pin="1"/>
 <wire x1="210.82" y1="134.62" x2="213.36" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="137.16" x2="210.82" y2="134.62" width="0.1524" layer="91"/>
 <junction x="210.82" y="134.62"/>
+<pinref part="S2" gate="S" pin="2"/>
+<wire x1="213.36" y1="132.08" x2="210.82" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="132.08" x2="210.82" y2="134.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$42" class="0">
@@ -9112,11 +9120,11 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <pinref part="R24" gate="G$1" pin="2"/>
 <wire x1="210.82" y1="111.76" x2="208.28" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="S3" gate="S" pin="1"/>
-<pinref part="S3" gate="S" pin="2"/>
-<wire x1="213.36" y1="109.22" x2="213.36" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="111.76" x2="213.36" y2="111.76" width="0.1524" layer="91"/>
 <junction x="210.82" y="111.76"/>
-<junction x="213.36" y="111.76"/>
+<pinref part="S3" gate="S" pin="2"/>
+<wire x1="213.36" y1="109.22" x2="210.82" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="210.82" y1="109.22" x2="210.82" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$41" class="0">
@@ -9131,6 +9139,21 @@ Resettable Fuse. Spark Fun Electronics SKU : COM-08357</description>
 <pinref part="D4" gate="G$1" pin="C"/>
 <pinref part="F1" gate="G$1" pin="1"/>
 <wire x1="187.96" y1="68.58" x2="190.5" y2="68.58" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$35" class="0">
+<segment>
+<pinref part="S1" gate="S" pin="3"/>
+<wire x1="106.68" y1="109.22" x2="109.22" y2="109.22" width="0.1524" layer="91"/>
+<pinref part="R14" gate="G$1" pin="1"/>
+<wire x1="109.22" y1="109.22" x2="109.22" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="S1" gate="S" pin="4"/>
+<wire x1="106.68" y1="106.68" x2="109.22" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="106.68" x2="109.22" y2="109.22" width="0.1524" layer="91"/>
+<junction x="109.22" y="109.22"/>
+<pinref part="R16" gate="G$1" pin="1"/>
+<wire x1="109.22" y1="109.22" x2="116.84" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="116.84" y1="109.22" x2="116.84" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
