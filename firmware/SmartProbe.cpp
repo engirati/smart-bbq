@@ -2,10 +2,11 @@
 
 #include "SmartProbe.h"
 
-SmartProbe::SmartProbe(uint8_t probePin, uint8_t ledPin, ThermistorProbe::ProbeType probeType, float tempAlarm) {
+SmartProbe::SmartProbe(uint8_t probePin, uint8_t ledPin, ThermistorProbe::ProbeType probeType, float alarmTemp, bool alarmEnable) {
     _probePin = probePin;
     _probeType = probeType;
-    _tempAlarm = tempAlarm;
+    _alarmTemp = alarmTemp;
+    _alarmEnable = alarmEnable;
     
     _indicator = new SimpleLed(ledPin);
 }
@@ -24,12 +25,20 @@ ThermistorProbe::ProbeType SmartProbe::getProbeType() {
     return _probeType;
 }
 
-void SmartProbe::setTempAlarm(float tempAlarm) {
-    _tempAlarm = tempAlarm;
+void SmartProbe::setAlarmTemp(float alarmTemp) {
+    _alarmTemp = alarmTemp;
 }
 
-float SmartProbe::getTempAlarm() {
-    return _tempAlarm;
+float SmartProbe::getAlarmTemp() {
+    return _alarmTemp;
+}
+
+void SmartProbe::setAlarmEnable(bool alarmEnable) {
+    _alarmEnable = alarmEnable;
+}
+
+float SmartProbe::getAlarmEnable() {
+    return _alarmEnable;
 }
 
 void SmartProbe::activate() {
