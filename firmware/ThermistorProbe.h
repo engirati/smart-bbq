@@ -13,9 +13,9 @@ class ThermistorProbe
         enum ProbeType{ET72, ET732};
         ThermistorProbe(double pur, int adc);
         ~ThermistorProbe();
-        double getTempK(int pin, enum ProbeType probeType);
-        double getTempC(int pin, enum ProbeType probeType);
-        double getTempF(int pin, enum ProbeType probeType);
+        double getTempK(int pin, enum ProbeType probeType, bool smooth=false);
+        double getTempC(int pin, enum ProbeType probeType, bool smooth=false);
+        double getTempF(int pin, enum ProbeType probeType, bool smooth=false);
     private:
         double _pur, A, B, C;
         int _adc;

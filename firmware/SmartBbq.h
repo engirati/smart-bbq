@@ -8,6 +8,7 @@
 #include "SmartProbe.h"
 
 #define PROBENUM 4
+#define FANNUM2
 
 class SmartBbq
 {
@@ -19,12 +20,18 @@ class SmartBbq
                 , uint8_t ledPin1
                 , uint8_t ledPin2
                 , uint8_t ledPin3
-                , uint8_t ledPin4);
+                , uint8_t ledPin4
+                , uint8_t fanPin1
+                , uint8_t fanPin2);
         ~SmartBbq();
         void select();
         void up();
         void down();
         float getActiveTemp();
+        float getActiveAlarm();
+        float getProbeTemp(int probeIndex);
+        float getProbeAlarm(int probeIndex);
+        bool getProbeAlarmE(int probeIndex);
     private:
         ThermistorProbe * _thermistorProbe; // Define ThermisterProbe
         SmartProbe * _smartProbes[PROBENUM]; // array of SmartProbe objects

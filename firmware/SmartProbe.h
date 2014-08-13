@@ -10,19 +10,22 @@
 class SmartProbe
 {
     public:
-        SmartProbe(uint8_t probePin, uint8_t ledPin, ThermistorProbe::ProbeType probeType = ThermistorProbe::ProbeType::ET732, float tempAlarm = 140.0);
+        SmartProbe(uint8_t probePin, uint8_t ledPin, ThermistorProbe::ProbeType probeType = ThermistorProbe::ProbeType::ET732, float alarmTemp = 140.0, bool alarmEnable = FALSE);
         ~SmartProbe();
         void setProbeType(ThermistorProbe::ProbeType probeType);
         ThermistorProbe::ProbeType getProbeType();
-        void setTempAlarm(float tempAlarm);
-        float getTempAlarm();
+        void setAlarmTemp(float alarmTemp);
+        float getAlarmTemp();
+        void setAlarmEnable(bool alarmEnable);
+        float getAlarmEnable();
         void activate();
         void deactivate();
         uint8_t getPin();
     private:
         uint8_t _probePin; // probe pin
         ThermistorProbe::ProbeType _probeType; // probe type
-        float _tempAlarm; // temperature alarm
+        float _alarmTemp; // alarm temperature
+        bool _alarmEnable;
         SimpleLed * _indicator; // probeindicator
 };
 
